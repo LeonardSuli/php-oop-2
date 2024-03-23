@@ -16,23 +16,45 @@
 // 5 - il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia).
 
 
-class product
+class Product
 {
 
-    public $name;
-    public $description;
-    public $image;
-    public $price;
-    public $category;
-    public $articleType;
+    // public $name;
+    // public $description;
+    // public $image;
+    // public $price;
+    // public $articleType;
+    // public $category;
 
-    public function __construct($name, $description, $image, $price, $category, $articleType)
+    public function __construct(public $name, public $description, public $image, public $price, public $articleType)
     {
         $this->name = $name;
         $this->description = $description;
         $this->image = $image;
         $this->price = $price;
-        $this->category = $category;
         $this->articleType = $articleType;
     }
 }
+
+
+class Dogs extends Product
+{
+    // public $breed;
+    // public $size;
+
+    public function __construct(public $name, public $description, public $image, public $price, public $articleType, public $breed, public $size)
+    {
+        $this->breed = $breed;
+        $this->size = $size;
+    }
+}
+
+// $product = new Product('a', 'b', 'c', 'd', 'e');
+$dogs = new Dogs('paperella', 'oggetto di gomma da mordere', 'https://picsum.photos/id/237/400/300', 4.99, 'toys', 'golden retriver', 'medium');
+
+var_dump($dogs);
+
+
+// class Cats extends Product
+// {
+// }
