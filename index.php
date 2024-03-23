@@ -42,8 +42,9 @@ class Dogs extends Product
     // public $breed;
     // public $size;
 
-    public function __construct(public $name, public $description, public $image, public $price, public $articleType, public $breed, public $size)
+    public function __construct($name, $description, $image, $price, $articleType, public $breed, public $size)
     {
+        parent::__construct($name, $description, $image, $price, $articleType);
         $this->breed = $breed;
         $this->size = $size;
     }
